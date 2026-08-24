@@ -1,0 +1,27 @@
+# Secrets
+.env
+backend/.env
+
+# Python virtual environments and caches
+.venv/
+backend/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Node dependencies and generated frontend builds
+frontend/node_modules/
+frontend/dist/
+frontend/dist-driver/
+frontend/dist-backup/
+
+# Local SQLite databases
+data/*.sqlite3
+backend/data/*.sqlite3
+
+# Local logs
+.local-logs/
+
+# Archives
+*.zip
+*.tar.gz
