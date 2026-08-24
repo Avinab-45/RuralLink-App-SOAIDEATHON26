@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RuralLink Logistics</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body>
+    <header>
+      <b>
+        RuralLink
+        <small>Logistics</small>
+      </b>
+
+      <nav>
+        <button data-view="customer" class="active">
+          Place an order
+        </button>
+
+        <button data-view="operations">
+          Operations
+        </button>
+
+      <a id="driver-pwa-link" href="#">Driver PWA</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="customer" class="view active">
+        <p class="eyebrow">CUSTOMER PORTAL</p>
+
+        <h1>Send essentials where they are needed.</h1>
+
+        <p>
+          Describe your order naturally. It is parsed, prioritised and
+          added to the next delivery plan.
+        </p>
+
+        <form id="order-form" class="card">
+          <label>
+            Your name
+
+            <input
+              name="customer_name"
+              required
+              placeholder="e.g. Sita Devi"
+            >
+          </label>
+
+          <label>
+            Mobile number
+
+            <input
+              name="phone"
+              placeholder="Optional"
+            >
+          </label>
+
+          <label>
+            Village / order details
+
+            <textarea
+              name="message"
+              required
+              placeholder="e.g. Pipili health centre needs medicines urgently"
+            ></textarea>
+          </label>
+
+          <button type="button" id="location-button">
+            Use my location
+          </button>
+
+          <span id="location-status">
+            Location optional — village lookup will be used when absent.
+          </span>
+
+          <input type="hidden" name="latitude">
+          <input type="hidden" name="longitude">
+
+          <button class="primary">
+            Submit order
+          </button>
+        </form>
+
+        <div id="order-result" class="card" hidden></div>
+      </section>
+
+      <section id="operations" class="view">
+        <p class="eyebrow">OPERATIONS CONSOLE</p>
+
+        <h1>Plan the day on real roads.</h1>
+
+        <p>
+          Orders flow from customer messages through Gemini/offline parsing,
+          ML scoring, SQLite and OR-Tools.
+        </p>
+
+        <p>
+          <button id="refresh-orders">
+            Refresh orders
+          </button>
+
+          <button id="plan-orders" class="primary">
+            Optimise routes
+          </button>
+
+          <span id="routing-status"></span>
+        </p>
+
+        <div id="map"></div>
+
+        <div id="route-summary" class="card" hidden></div>
+
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Customer</th>
+                <th>Village</th>
+                <th>Priority</th>
+                <th>ETA</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="orders-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
