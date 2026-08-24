@@ -2,15 +2,10 @@ services:
   - type: web
     name: rurallink
     runtime: docker
+    plan: free
     healthCheckPath: /health
     envVars:
-      - key: DATABASE_PATH
-        value: /var/data/s14.sqlite3
       - key: GEMINI_API_KEY
         sync: false
       - key: ORS_API_KEY
         sync: false
-    disk:
-      name: rurallink-data
-      mountPath: /var/data
-      sizeGB: 1
