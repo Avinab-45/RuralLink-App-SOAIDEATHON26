@@ -9,3 +9,5 @@ services:
         sync: false
       - key: ORS_API_KEY
         sync: false
+      - key: MODEL_ARTIFACT_PATH
+        value: /app/backend/models/artifacts.joblib
