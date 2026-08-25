@@ -867,6 +867,19 @@ RuralLink-App-SOAIDEATHON26/
 
 ---
 
+## Team
+
+| Member | Responsibility |
+|---|---|
+| AVINAB AMLAN NAYAK | Backend and Springboot |
+| DIBYANI TRIPATHY | React Frontend |
+| ARYAN KUMAR SAHU | AIML, OR Tools and prediction services |
+| AMAN KUMAR SHARMA | Driver PWA and offline storage |
+| YAMINI MISHRA | PPT and Video Editing |
+| SANCHITA RAJU | Testing and Documentation |
+
+---
+
 
 ## Third-Party Attribution
 
