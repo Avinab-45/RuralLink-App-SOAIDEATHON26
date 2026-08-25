@@ -707,7 +707,7 @@ The Driver PWA provides:
 
 | Module | Status |
 |---|---|
-| Customer order portal | Complete |
+| Customer order portal | Complete / In-progress |
 | Driver PWA | Complete |
 | FastAPI backend | Complete |
 | Gemini message parsing | Complete |
@@ -720,7 +720,7 @@ The Driver PWA provides:
 | Offline delivery updates | Complete |
 | Offline GPS storage | Complete |
 | Automatic synchronization | Complete |
-| Docker deployment | Complete |
+| Docker deployment | In-progress |
 | Render deployment | Complete |
 
 ---
