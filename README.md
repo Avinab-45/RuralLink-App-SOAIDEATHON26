@@ -433,27 +433,71 @@ ORS_BASE_URL=https://api.openrouteservice.org
 DATABASE_PATH=./rurallink.db
 ```
 
-### Environment Variable Details
+## Environment Variables
+
+RuralLink uses environment variables for optional external services and
+deployment-specific configuration.
+
+### Local Development
+
+Create this file locally:
+
+```text
+backend/.env
+```
+
+Example:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL_NAME=gemini-3.7-flash
+
+ORS_API_KEY=your_openrouteservice_api_key
+ORS_BASE_URL=https://api.openrouteservice.org
+
+DATABASE_PATH=./rurallink.db
+```
+
+Do not commit `backend/.env` to GitHub. Commit only the safe template:
+
+```text
+backend/.env.example
+```
+
+### Render Deployment
+
+For Render, add the following variables through:
+
+```text
+Render Dashboard
+→ Your Service
+→ Environment
+→ Add Environment Variable
+```
 
 | Variable | Required | Description |
 |---|---:|---|
 | `GEMINI_API_KEY` | No | Enables Gemini-based natural-language order parsing |
-| `GEMINI_MODEL_NAME` | No | Gemini model name; defaults to `gemini-3.7-flash` |
+| `GEMINI_MODEL_NAME` | No | Gemini model name; `gemini-3.7-flash` |
 | `ORS_API_KEY` | No | Enables OpenRouteService road-based route geometry |
 | `ORS_BASE_URL` | No | OpenRouteService API endpoint |
 | `DATABASE_PATH` | No | Custom SQLite database location |
 
-### Fallback Behavior
 
-If `GEMINI_API_KEY` is unavailable:
+### Optional Service Fallbacks
 
-- The system uses an offline keyword-based parser.
+If `GEMINI_API_KEY` is not configured:
 
-If `ORS_API_KEY` is unavailable:
+- RuralLink uses the offline keyword-based order parser.
 
-- The system uses a clearly labelled straight-line routing fallback.
+If `ORS_API_KEY` is not configured:
 
-Optional external services should not prevent the basic application from starting.
+- RuralLink uses the configured fallback route method, such as straight-line
+  routing for demonstration purposes.
+
+If `DATABASE_PATH` is not configured:
+
+- RuralLink uses the default SQLite database path defined by the application.
 
 ---
 
