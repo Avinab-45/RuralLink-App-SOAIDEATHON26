@@ -660,7 +660,6 @@ The Driver PWA provides:
 
 ## Current Project Status
 
-Update this table before publishing.
 
 | Module | Status |
 |---|---|
