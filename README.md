@@ -664,7 +664,7 @@ Update this table before publishing.
 
 | Module | Status |
 |---|---|
-| Customer order portal | Complete / In progress |
+| Customer order portal | Complete |
 | Driver PWA | Complete |
 | FastAPI backend | Complete |
 | Gemini message parsing | Complete |
